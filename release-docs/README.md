@@ -9,7 +9,7 @@
 - [THIRD_PARTY_LICENSES.txt](THIRD_PARTY_LICENSES.txt): полный опубликованный перечень уведомлений упакованного yt-dlp этой версии; собранные тексты FFmpeg, его установленных библиотек, Deno, V8, TypeScript и Bellota.
 - [ffmpeg-amd64-versions.txt](ffmpeg-amd64-versions.txt) и [ffmpeg-arm64-versions.txt](ffmpeg-arm64-versions.txt): неизменённые данные поставщика для конкретных выпусков.
 
-При передаче сохраняйте всю папку рядом с `.app` в одном архиве. Дополнительные документы не требуют пересборки приложения. Собственный код приложения и документация охватываются [LICENSE](LICENSE); сторонние компоненты сохраняют свои условия.
+При передаче сохраняйте всю папку рядом с `.app` в одном DMG. Дополнительные документы не требуют пересборки приложения. Собственный код приложения и документация охватываются [LICENSE](LICENSE); сторонние компоненты сохраняют свои условия.
 
 В перечень не добавлены зависимости, найденные только в общем Cargo.lock Deno: это не доказательство их включения в исполняемый файл. SDL из версии поставщика FFmpeg относится к его общему комплекту; `ffplay` в нашей `.app` отсутствует.
 
@@ -30,7 +30,7 @@ This collection describes the existing universal `Программа скачи�
 
 SOURCE_REFERENCES.md records provenance, hashes, source links and supplier build scripts. THIRD_PARTY_LICENSES.txt preserves the complete upstream yt-dlp packaged-executable notices for this version and collects identified FFmpeg/library, Deno, V8, TypeScript and Bellota texts. The two FFmpeg version files are unmodified supplier records.
 
-Keep this entire directory next to the app in the same archive. Adding these external documents does not require rebuilding the app. The original app code and documentation are covered by [LICENSE](LICENSE), Noncommercial Use License 1.0, Copyright (c) 2026 OzzyLabz. Third-party components retain their own terms.
+Keep this entire directory next to the app in the same DMG. Adding these external documents does not require rebuilding the app. The original app code and documentation are covered by [LICENSE](LICENSE), Noncommercial Use License 1.0, Copyright (c) 2026 OzzyLabz. Third-party components retain their own terms.
 
 Dependencies found only in Deno's general Cargo.lock are excluded. SDL appears in the supplier's broader FFmpeg inventory; our app does not distribute ffplay.
 

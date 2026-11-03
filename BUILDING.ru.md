@@ -48,14 +48,10 @@ codesign --verify --deep --strict "$APP"
 
 Для всех пяти исполняемых файлов ожидаются архитектуры `x86_64 arm64`; для основного файла — `minos 13.0` в обеих архитектурах. Эти проверки не заменяют запуск приложения и пробную загрузку на реальных Intel и Apple Silicon Mac с нужными версиями системы.
 
-После выполнения условий распространения и проверки релиза DMG можно создать отдельно (фон окна и расположение значков задаются в Finder):
+После выполнения условий распространения и проверки релиза DMG собирается одной командой (берёт программу из рабочей папки и `dmg/background.png`):
 
 ```sh
-mkdir -p dist/dmg
-ditto "dist/Программа скачивания.app" "dist/dmg/Программа скачивания.app"
-ditto release-docs dist/dmg/release-docs
-ln -s /Applications "dist/dmg/Программы"
-hdiutil create -srcfolder dist/dmg -volname "Программа скачивания" -format UDZO -ov dist/Ozzy-Media-Downloader-1.0.dmg
+./make-dmg.sh
 ```
 
 ## Файлы лицензий

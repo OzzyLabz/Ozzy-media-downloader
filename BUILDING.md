@@ -48,14 +48,10 @@ codesign --verify --deep --strict "$APP"
 
 All five executables should report `x86_64 arm64`; both slices of the main executable should report `minos 13.0`. These checks do not replace a launch and test download on Intel and Apple Silicon Macs running the required OS versions.
 
-After the distribution requirements and release checks are complete, create the DMG separately (the window background and icon layout are set in Finder):
+After the distribution requirements and release checks are complete, create the DMG with one command (it uses the app from the working folder and `dmg/background.png`):
 
 ```sh
-mkdir -p dist/dmg
-ditto "dist/Программа скачивания.app" "dist/dmg/Программа скачивания.app"
-ditto release-docs dist/dmg/release-docs
-ln -s /Applications "dist/dmg/Программы"
-hdiutil create -srcfolder dist/dmg -volname "Программа скачивания" -format UDZO -ov dist/Ozzy-Media-Downloader-1.0.dmg
+./make-dmg.sh
 ```
 
 ## License files
