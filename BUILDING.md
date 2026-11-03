@@ -48,13 +48,16 @@ codesign --verify --deep --strict "$APP"
 
 All five executables should report `x86_64 arm64`; both slices of the main executable should report `minos 13.0`. These checks do not replace a launch and test download on Intel and Apple Silicon Macs running the required OS versions.
 
-After the distribution requirements and release checks are complete, create a transfer archive separately:
+After the distribution requirements and release checks are complete, create the DMG separately (the window background and icon layout are set in Finder):
 
 ```sh
-ditto -c -k --sequesterRsrc --keepParent "dist/Программа скачивания.app" "dist/Программа скачивания.zip"
-zip -r "dist/Программа скачивания.zip" release-docs
+mkdir -p dist/dmg
+ditto "dist/Программа скачивания.app" "dist/dmg/Программа скачивания.app"
+ditto release-docs dist/dmg/release-docs
+ln -s /Applications "dist/dmg/Программы"
+hdiutil create -srcfolder dist/dmg -volname "Программа скачивания" -format UDZO -ov dist/Ozzy-Media-Downloader-1.0.dmg
 ```
 
 ## License files
 
-The app's original code and documentation are covered by [LICENSE](LICENSE), Noncommercial Use License 1.0, Copyright (c) 2026 OzzyLabz. Preserve the copy in [release-docs/LICENSE](release-docs/LICENSE) when creating the transfer archive. Bundled tools retain their own licenses and source obligations. The license files are external documents and do not require rebuilding the app.
+The app's original code and documentation are covered by [LICENSE](LICENSE), Noncommercial Use License 1.0, Copyright (c) 2026 OzzyLabz. Preserve the copy in [release-docs/LICENSE](release-docs/LICENSE) when creating the DMG. Bundled tools retain their own licenses and source obligations. The license files are external documents and do not require rebuilding the app.
