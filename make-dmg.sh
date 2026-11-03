@@ -7,7 +7,7 @@ ROOT="$(cd "$(dirname "$0")" && pwd)"
 # --- Настройки этой программы ---
 APP="$ROOT/../программа скачивания/универсал/dist/Программа скачивания.app"
 VOL="Программа скачивания"
-OUT_NAME="Ozzy-Media-Downloader-1.0.dmg"
+OUT_NAME="Ozzy-Media-Downloader-$(plutil -extract CFBundleShortVersionString raw "$APP/Contents/Info.plist").dmg"
 ICON_Y=272
 EXTRA="$ROOT/release-docs"
 # --------------------------------

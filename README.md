@@ -2,7 +2,7 @@
 
 [English](README.en.md) · Русский
 
-**⬇️ [Скачать приложение для Intel и Apple Silicon (DMG)](https://github.com/OzzyLabz/ozzy-media-downloader/releases/download/v1.0/Ozzy-Media-Downloader-1.0.dmg)**
+**⬇️ [Скачать приложение для Intel и Apple Silicon (DMG)](https://github.com/OzzyLabz/ozzy-media-downloader/releases/latest)**
 
 ![Окно программы скачивания](screenshot.png)
 
